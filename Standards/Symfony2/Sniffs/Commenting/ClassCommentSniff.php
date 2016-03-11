@@ -14,11 +14,6 @@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
-if (class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', true) === false) {
-    $error = 'Class PHP_CodeSniffer_CommentParser_ClassCommentParser not found';
-    throw new PHP_CodeSniffer_Exception($error);
-}
-
 if (class_exists('PEAR_Sniffs_Commenting_ClassCommentSniff', true) === false) {
     $error = 'Class PEAR_Sniffs_Commenting_ClassCommentSniff not found';
     throw new PHP_CodeSniffer_Exception($error);
