@@ -1,48 +1,36 @@
-Symfony2 PHP CodeSniffer Coding Standard
-========================================
+# Symfony2 PHP CodeSniffer Coding Standard
 
-A code standard to check against the [Symfony coding standards](http://symfony.com/doc/current/contributing/code/standards.html)
+A code standard to check against the [Symfony coding standards](http://symfony.com/doc/current/contributing/code/standards.html).
 
-Installation
-------------
+Compatible with PHP CodeSniffer 2.x.
 
-1. Install phpcs:
+## Simple Installation
 
-        pear install PHP_CodeSniffer
+1. Install phpcs. Follow instructions at [squizlabs/PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer).
 
-2. Find your PEAR directory:
-
-        pear config-show | grep php_dir
-
-3. Copy, symlink or check out this repo to a folder called Symfony2 inside the
-   phpcs `Standards` directory:
-
+2. Clone this repo into the `Standards` directory of PHP CodeSniffer.
+ 
         cd /path/to/pear/PHP/CodeSniffer/Standards
-        git clone git://github.com/cbsi/cbsi-php-coding-standard.git Symfony2
+        git clone https://github.com/justindelacruz/Symfony2-PHP-Coding-Standard.git Symfony2
 
-4. Set Symfony2 as your default coding standard:
+3. Optionally, set Symfony2 as your default coding standard:
 
         phpcs --config-set default_standard Symfony2
 
-5. ...
-
-6. Profit!
+4. Run `phpcs` and confirm that installation worked:
 
         cd /path/to/my/project
         phpcs
         phpcs path/to/my/file.php
 
+## Composer Installation
 
-Contributing
-------------
+1. Install phpcs. Follow instructions at [squizlabs/PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer).
 
-If you do contribute code to these sniffs, please make sure it conforms to the PEAR
-coding standard and that the Symfony2-coding-standard unit tests still pass.
+2. Add this repo as a dependency in `composer.json`:
 
-To check the coding standard, run from the Symfony2-coding-standard source root:
+        composer require --dev justindelacruz/symfony2-php-coding-standard
 
-    $ phpcs --ignore=*/tests/* --standard=PEAR . -n
+3. Run `phpcs` using the `standard` parameter, e.g.
 
-The unit-tests are run from within the PHP_CodeSniffer directory:
-
-    $ phpunit --filter Symfony2_* tests/AllTests.php
+        phpcs --standard=./vendor/justindelacruz/symfony2-php-coding-standard/Standards/Symfony2 path/to/my/file.php
